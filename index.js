@@ -2,10 +2,27 @@ let options = ["Rock", "Paper", "Scissors"];
 let scoreComputer = 0;
 let scorePlayer = 0;
 let message;
+let playerSelected = "";
 
-//const playerAnwser = document.querySelector(".player_anwser");
+const rock_button = document.querySelector(".rock");
+const paper_button = document.querySelector(".paper");
+const scissors_button = document.querySelector(".scissors");
 
+rock_button.addEventListener("click", function() {
+  playerSelected = "Rock";
+  console.log("Rock");
+});
 
+paper_button.addEventListener("click", function() {
+  playerSelected = "Paper";
+  console.log("Paper");
+});
+
+scissors_button.addEventListener("click", function() {
+  playerSelected = "Scissors"
+  console.log("Scissors");
+});
+/*
 function roundNumber(){
   let rounds = window.prompt("How many rounds would you like to play?");
   if(isNaN(rounds)){
@@ -23,6 +40,7 @@ function playerChoice(){
   return input.charAt(0).toUpperCase() + input.slice(1);
 }
 
+*/
 function computerPlay() {
   let computerAnwser = options[Math.floor(Math.random() * options.length)];
   return computerAnwser;
@@ -49,6 +67,9 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+
+/*
+
 function scoreBoard(){
   alert("Player: " + scorePlayer + " Computer: " + scoreComputer);
   game();
@@ -69,3 +90,4 @@ function game(rounds){
 }
 
 game(roundNumber());
+*/

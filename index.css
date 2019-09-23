@@ -32,12 +32,14 @@ body {
 	align-items: center;
 	justify-content: center;
 	margin-top: 30px;
-	font-size: 100px;
+	font-size: 3em;
+	min-width: fill-available;
 }
 
 .computer, .player {
 	border: 7px black solid;
 	border-radius: 10px;
+
 }
 
 .player h1, .computer h1{
