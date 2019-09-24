@@ -2,26 +2,45 @@ let options = ["Rock", "Paper", "Scissors"];
 let scoreComputer = 0;
 let scorePlayer = 0;
 let message;
-let playerSelected = "";
 
 const rock_button = document.querySelector(".rock");
 const paper_button = document.querySelector(".paper");
 const scissors_button = document.querySelector(".scissors");
 
-rock_button.addEventListener("click", function() {
-  playerSelected = "Rock";
-  console.log("Rock");
+const playerText = document.querySelector("#playerInput");
+playerText.innerHTML = "";
+
+const computerText = document.querySelector("#computerInput");
+
+const messageText = document.querySelector("#message");
+
+rock_button.addEventListener("click", function(){
+  displayPlayerinput("Rock");
 });
 
-paper_button.addEventListener("click", function() {
-  playerSelected = "Paper";
-  console.log("Paper");
+paper_button.addEventListener("click", function(){
+  displayPlayerinput("Paper");
 });
 
-scissors_button.addEventListener("click", function() {
-  playerSelected = "Scissors"
-  console.log("Scissors");
+scissors_button.addEventListener("click", function(){
+  displayPlayerinput("Scissors");
 });
+
+function computerPlay() {
+  let computerAnwser = options[Math.floor(Math.random() * options.length)];
+  computerText.innerHTML = computerAnwser;
+  return computerAnwser;
+}
+
+function displayPlayerinput(input){
+  playerText.innerHTML = input;
+  messageText.innerHTML = (playRound(input, computerPlay()));
+}
+
+
+//Add waiting when computer chooses
+//Change border color depending on score
+
 /*
 function roundNumber(){
   let rounds = window.prompt("How many rounds would you like to play?");
@@ -33,18 +52,7 @@ function roundNumber(){
     return rounds;
   }
 }
-
-function playerChoice(){
-  let rawInput = window.prompt("Choose Rock, Paper or Scissors: ");
-  let input = rawInput.toLowerCase();
-  return input.charAt(0).toUpperCase() + input.slice(1);
-}
-
 */
-function computerPlay() {
-  let computerAnwser = options[Math.floor(Math.random() * options.length)];
-  return computerAnwser;
-}
 
 function playRound(playerSelection, computerSelection) {
   if(playerSelection == computerSelection){
@@ -63,8 +71,6 @@ function playRound(playerSelection, computerSelection) {
     ++scoreComputer;
     return message;
   }
-  //Add undefined anwser
-
 }
 
 

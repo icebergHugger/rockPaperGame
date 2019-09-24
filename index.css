@@ -26,7 +26,8 @@ body {
 	max-width: 150vh;
 }
 
-.player_anwser {
+.player_anwser,
+.computer_anwser {
 	height : 200px;
 	display: flex;
 	align-items: center;
@@ -78,4 +79,34 @@ body {
 
 .choice:active {
 	transform: scale(1);
+}
+
+.scoreboard {
+	display : flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.scoreboard h2 {
+
+}
+
+#score {
+	margin-bottom: 5px;
+	text-decoration: underline;
+}
+
+.scoreBox {
+	text-align: center;
+	border : 4px black solid;
+	border-radius: 10px;
+}
+
+.scoreBox p {
+	padding: 7px 35px;
+	font-size: 35px;
+	letter-spacing: 5px;
+	font-weight: bold;
+	margin: auto;
 }
