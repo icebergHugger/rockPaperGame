@@ -23,7 +23,7 @@ body {
 	display : grid;
 	height: 400px;
 	grid-template-columns: 1fr 1fr 1fr;
-	max-width: 150vh;
+	max-width: 190vh;
 }
 
 .player_anwser,
@@ -35,12 +35,13 @@ body {
 	margin-top: 30px;
 	font-size: 3em;
 	min-width: fill-available;
+	padding: 20px;
 }
 
 .computer, .player {
 	border: 7px black solid;
 	border-radius: 10px;
-
+	width: 100%
 }
 
 .player h1, .computer h1{
@@ -89,7 +90,9 @@ body {
 }
 
 .scoreboard h2 {
-
+	text-align: center;
+	max-width: 50vh;
+	min-height: 10vh;
 }
 
 #score {
@@ -101,6 +104,8 @@ body {
 	text-align: center;
 	border : 4px black solid;
 	border-radius: 10px;
+	margin: 0px 20px;
+	min-width: 200px;
 }
 
 .scoreBox p {

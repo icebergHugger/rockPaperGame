@@ -14,6 +14,9 @@ const computerText = document.querySelector("#computerInput");
 
 const messageText = document.querySelector("#message");
 
+const scoreText = document.querySelector("#scoreOutput");
+const scoreBox = document.querySelector(".scoreBox");
+
 rock_button.addEventListener("click", function(){
   displayPlayerinput("Rock");
 });
@@ -35,6 +38,24 @@ function computerPlay() {
 function displayPlayerinput(input){
   playerText.innerHTML = input;
   messageText.innerHTML = (playRound(input, computerPlay()));
+  setTimeout(updateScore, 1000);
+  setTimeout(clear, 3000);
+}
+
+function clear(){
+  computerText.innerHTML = "";
+  playerText.innerHTML = "";
+}
+
+function updateScore(){
+  scoreText.innerHTML = scorePlayer + " - " + scoreComputer;
+  if(scorePlayer < scoreComputer){
+    scoreBox.style.cssText = "border : 4px red solid";
+  }else if(scorePlayer > scoreComputer){
+    scoreBox.style.cssText = "border : 4px green solid";
+  }else if (scorePlayer === scoreComputer){
+    scoreBox.style.cssText = "border : 4px black solid";
+  }
 }
 
 
